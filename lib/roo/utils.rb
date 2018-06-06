@@ -5,14 +5,10 @@ module Roo
     LETTERS = ('A'..'Z').to_a
 
     def split_coordinate(str)
-      @split_coordinate ||= {}
-
-      @split_coordinate[str] ||= begin
-        letter, number = split_coord(str)
-        x = letter_to_number(letter)
-        y = number
-        [y, x]
-      end
+      letter, number = split_coord(str)
+      x = letter_to_number(letter)
+      y = number
+      [y, x]
     end
 
     alias_method :ref_to_key, :split_coordinate
